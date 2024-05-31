@@ -1,5 +1,5 @@
 # Demo eines Builder Pattern
-Design Pattern 'Builder'
+Verwendung des Design Pattern 'Builder'
 
 - Komplexe Object Erstellung 
 - Erstellungsprozess ist teuer (Performance, Speicher) 
