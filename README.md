@@ -3,10 +3,10 @@ Design Pattern 'Builder'
 
 - Komplexe Object Erstellung 
 - Erstellungsprozess ist teuer (Performance, Speicher) 
-- Sammlung von Daten 
-
+- Sammlung von Daten bevor das Endprodukt erstellt wird
 	- Sammeln 
 	- Auslösen / Ausführen  
-	- Beispiel Konfiguration einer Anwendung (..Builder) 
-	- ReservationBuilder
-	- ContractBuilder (z.B. als Wizard) 
+	- Beispiele:
+ 		-  Konfiguration einer Anwendung (..Builder) 
+		- ReservationBuilder
+		- ContractBuilder (z.B. als Wizard) 
