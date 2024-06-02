@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.BuilderLibrary.Models.Handbook
+namespace Demo.BuilderLibrary.Models.Manual
 {
     internal class ChapterB : Chapter
     {

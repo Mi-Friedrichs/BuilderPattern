@@ -1,5 +1,4 @@
-﻿using Demo.BuilderLibrary.Models.Handbook;
-using Demo.BuilderLibrary.Models.Product;
+﻿using Demo.BuilderLibrary.Models.Manual;
 using Demo.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -38,7 +37,7 @@ namespace Demo.BuilderLibrary
             this._book.AddChapter(new ChapterC());
         }
 
-        public string GetHandbook()
+        public string GetManual()
         {
             string content = this._book.PrintContent();
             this.Reset();

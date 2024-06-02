@@ -1,6 +1,5 @@
 ﻿using Demo.BuilderLibrary.Models.Product;
 using Demo.Interfaces;
-using System.Net.Http.Headers;
 
 namespace Demo.BuilderLibrary
 {
