@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo.BuilderLibrary.Models.Manual
 {
-    internal abstract class Chapter
+    public abstract class Chapter
     {
         public abstract string Header { get; set; }
 

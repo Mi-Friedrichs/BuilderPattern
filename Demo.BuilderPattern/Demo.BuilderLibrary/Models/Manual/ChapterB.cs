@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Demo.BuilderLibrary.Models.Manual
 {
-    internal class ChapterB : Chapter
+    public class ChapterB : Chapter
     {
         public override string Header { get => "Chapter 4711"; set => throw new NotImplementedException(); }
         public override string Teaser { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

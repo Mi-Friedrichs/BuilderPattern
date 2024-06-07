@@ -24,45 +24,12 @@ namespace Demo.BuilderLibrary.Models.Manual
         }
 
 
-        private List<Chapter> _parts = new List<Chapter>();
+        public List<Chapter> Parts { get; set; } = new List<Chapter>();
 
         internal void AddChapter(Chapter part)
         {
-            _parts.Add(part);
+            Parts.Add(part);
         }
 
-        public string PrintContent()
-        {
-            List<string> content = new List<string>();
-
-            GenerateTableOfContents();
-            content.AddRange(TableOfContents);
-
-            foreach (var part in _parts)
-            {
-                content.Add("   <PageBreak>");
-                content.Add(PrintChapter(part));
-            }
-            content.Add("   <End of Book>");
-
-            return string.Join("\r\n", content) + "\r\n";
-        }
-
-        private void GenerateTableOfContents()
-        {
-            int currentPage = 2;
-            TableOfContents.Clear();
-
-            foreach (var part in _parts)
-            {
-                TableOfContents.Add(part.Header.PadRight(30, '.') + currentPage.ToString().PadLeft(3, '.'));
-                currentPage += part.Pages;
-            }
-        }
-
-        private string PrintChapter(Chapter part)
-        {
-            return part.ToString();
-        }
     }
 }

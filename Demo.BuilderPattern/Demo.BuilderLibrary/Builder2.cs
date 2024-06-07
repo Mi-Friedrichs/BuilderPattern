@@ -39,9 +39,43 @@ namespace Demo.BuilderLibrary
 
         public string GetManual()
         {
-            string content = this._book.PrintContent();
+            string content = PrintContent();
             this.Reset();
             return content;
+        }
+
+        private string PrintContent()
+        {
+            List<string> content = new List<string>();
+
+            GenerateTableOfContents();
+            content.AddRange(_book.TableOfContents);
+
+            foreach (var part in _book.Parts)
+            {
+                content.Add("   <PageBreak>");
+                content.Add(PrintChapter(part));
+            }
+            content.Add("   <End of Book>");
+
+            return string.Join("\r\n", content) + "\r\n";
+        }
+
+        private void GenerateTableOfContents()
+        {
+            int currentPage = 2;
+            _book.TableOfContents.Clear();
+
+            foreach (var part in _book.Parts)
+            {
+                _book.TableOfContents.Add(part.Header.PadRight(30, '.') + currentPage.ToString().PadLeft(3, '.'));
+                currentPage += part.Pages;
+            }
+        }
+
+        private string PrintChapter(Chapter part)
+        {
+            return part.ToString();
         }
     }
 }
