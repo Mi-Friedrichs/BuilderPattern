@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.BuilderLibrary.Models.Manual
+namespace Demo.BuilderLibrary.InternalBuilderModels.Manual
 {
-    public class ChapterB : Chapter
+    internal class ChapterB : Chapter
     {
         public override string Header { get => "Chapter 4711"; set => throw new NotImplementedException(); }
         public override string Teaser { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

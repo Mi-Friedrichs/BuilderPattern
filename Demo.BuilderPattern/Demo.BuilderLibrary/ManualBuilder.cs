@@ -1,4 +1,4 @@
-﻿using Demo.BuilderLibrary.Models.Manual;
+﻿using Demo.BuilderLibrary.InternalBuilderModels.Manual;
 using Demo.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,36 +8,39 @@ using System.Threading.Tasks;
 
 namespace Demo.BuilderLibrary
 {
-    public class Builder2 : IBuilder
+    public class ManualBuilder : IBuilder
     {
-        private Book _book = new Book();
+        private InternalBook _book = new InternalBook();
 
-        public Builder2()
+        public ManualBuilder()
         {
             this.Reset();
         }
 
         public void Reset()
         {
-            this._book = new Book();
+            this._book = new InternalBook();
         }
 
-        public void BuildPartA()
+        public void AddPartA()
         {
             this._book.AddChapter(new ChapterA());
         }
 
-        public void BuildPartB()
+        public void AddPartB()
         {
             this._book.AddChapter(new ChapterB());
         }
 
-        public void BuildPartC()
+        public void AddPartC()
         {
             this._book.AddChapter(new ChapterC());
         }
 
-        public string GetManual()
+        /// <summary>
+        /// Build a manual with the current content
+        /// </summary>
+        public string BuildManual()
         {
             string content = PrintContent();
             this.Reset();

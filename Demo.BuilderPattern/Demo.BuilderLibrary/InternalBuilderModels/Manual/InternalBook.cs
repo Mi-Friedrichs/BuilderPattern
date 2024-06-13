@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.BuilderLibrary.Models.Manual
+namespace Demo.BuilderLibrary.InternalBuilderModels.Manual
 {
-    public class Book
+    internal class InternalBook
     {
         private List<string> _TableOfContents;
         public List<string> TableOfContents

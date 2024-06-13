@@ -11,46 +11,46 @@ namespace Demo.BuilderPattern
         {
             //HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
             //builder.Services.AddSingleton<IDirector, Director>();
-            //builder.Services.AddKeyedSingleton<IBuilder, Builder1>("Product");
-            //builder.Services.AddKeyedSingleton<IBuilder, Builder2>("Manual");
+            //builder.Services.AddKeyedSingleton<IBuilder, ProductBuilder>("Product");
+            //builder.Services.AddKeyedSingleton<IBuilder, ManualBuilder>("Manual");
 
             var director = new Director();
 
-            // Builder1 (Product)
-            Builder1 builder1 = new Builder1();
-            director.Builder = builder1;
+            // 1. Builder (with and without Director)
+            ProductBuilder productBuilder = new ProductBuilder();
+            director.Builder = productBuilder;
 
             Console.WriteLine("Standard basic product:");
             director.BuildSimpleProduct();
-            Console.WriteLine(builder1.GetProduct().ListParts());
+            Console.WriteLine(productBuilder.BuildProduct().ListParts());
 
             Console.WriteLine("Standard full featured product:");
             director.BuildComplexProduct();
-            Console.WriteLine(builder1.GetProduct().ListParts());
+            Console.WriteLine(productBuilder.BuildProduct().ListParts());
 
             Console.WriteLine("Custom product:");
-            builder1.BuildPartA();
-            builder1.BuildPartC();
-            Console.WriteLine(builder1.GetProduct().ListParts());
+            productBuilder.AddPartA();
+            productBuilder.AddPartC();
+            Console.WriteLine(productBuilder.BuildProduct().ListParts());
 
             Console.ReadLine();
 
-            // Builder2 (Manual)
-            Builder2 builder2 = new Builder2();
-            director.Builder = builder2;
+            // 2. Builder (with and without Director)
+            ManualBuilder manualBuilder = new ManualBuilder();
+            director.Builder = manualBuilder;
 
             Console.WriteLine("Documentation for Standard basic product:");
             director.BuildSimpleProduct();
-            Console.WriteLine(builder2.GetManual());
+            Console.WriteLine(manualBuilder.BuildManual());
 
             Console.WriteLine("Documentation for Standard full featured product:");
             director.BuildComplexProduct();
-            Console.WriteLine(builder2.GetManual());
+            Console.WriteLine(manualBuilder.BuildManual());
 
             Console.WriteLine("Documentation for Custom product:");
-            builder2.BuildPartA();
-            builder2.BuildPartC();
-            Console.WriteLine(builder2.GetManual());
+            manualBuilder.AddPartA();
+            manualBuilder.AddPartC();
+            Console.WriteLine(manualBuilder.BuildManual());
 
             Console.ReadLine();
         }

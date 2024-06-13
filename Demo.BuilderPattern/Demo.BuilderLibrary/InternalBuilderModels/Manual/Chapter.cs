@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.BuilderLibrary.Models.Manual
+namespace Demo.BuilderLibrary.InternalBuilderModels.Manual
 {
-    public abstract class Chapter
+    internal abstract class Chapter
     {
         public abstract string Header { get; set; }
 

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.BuilderLibrary.Models.Product
+namespace Demo.BuilderLibrary.InternalBuilderModels.Product
 {
-    internal class PartA
+    internal class PartB
     {
         public override string ToString()
         {
-            return "PartA";
+            return "PartB";
         }
     }
 }

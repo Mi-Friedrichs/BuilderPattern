@@ -20,14 +20,14 @@ namespace Demo.BuilderLibrary
         // building steps.
         public void BuildSimpleProduct()
         {
-            this._builder.BuildPartA();
+            this._builder.AddPartA();
         }
 
         public void BuildComplexProduct()
         {
-            this._builder.BuildPartA();
-            this._builder.BuildPartB();
-            this._builder.BuildPartC();
+            this._builder.AddPartA();
+            this._builder.AddPartB();
+            this._builder.AddPartC();
         }
     }
 }

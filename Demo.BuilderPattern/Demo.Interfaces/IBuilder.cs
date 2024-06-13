@@ -8,10 +8,10 @@ namespace Demo.Interfaces
 {
     public interface IBuilder
     {
-        void BuildPartA();
+        void AddPartA();
 
-        void BuildPartB();
+        void AddPartB();
 
-        void BuildPartC();
+        void AddPartC();
     }
 }
